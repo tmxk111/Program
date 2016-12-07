@@ -101,6 +101,7 @@ e(1:3, 1:3) = rot1;
 a2 = a*e;
 
 fid = fopen('ans.obj', 'w');
+res = zeros(xmax-xmin+1, ymax-ymin+1, zmax-zmin+1);
 for i = xmin:xmax
     for j = ymin:ymax
         for k = zmin:zmax
