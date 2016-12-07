@@ -66,7 +66,7 @@ for l = 40:1:50
                     x2 = round(ind2(1) / ind2(3));
                     y2 = round(ind2(2) / ind2(3));
 
-                    if isValid(x0, y0, img00, width) && isValid(x1, y1, img11, width) && isValid(x2, y2, img22, width)
+                    if isValid(x0, y0, img00, width) && isValid(x1, y1, img11, width) && isValid(x2, y2, img2, width)
                         res(i-xmin+1, j-ymin+1, k-zmin+1) = 255;
                         % fprintf(fid, 'v %d %d %d\n', i, j, k);
                     end
