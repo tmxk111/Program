@@ -6,7 +6,7 @@ path_max = 'E:\指静脉与指背纹\Work\Code\NewestDatabase2\max_cur\';
 path_max_dilate = 'E:\指静脉与指背纹\Work\Code\NewestDatabase2\max_cur_dilate\';
 se = strel('disk', 7);
 
-for sampleID = 1:200
+for sampleID = 1:20
     sampleID
     path1_max = [path_max, num2str(sampleID, '%.4d\\')];
     path1_max_dilate = [path_max_dilate, num2str(sampleID, '%.4d\\')];
