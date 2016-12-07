@@ -7,7 +7,7 @@ img0 = imread('0.tiff');
 img1 = imread('1.tiff');
 img2 = imread('2.tiff');
 
-se = strel('disk', 3);
+se = strel('disk', 7);
 img00 = imdilate(img0, se);
 img11 = imdilate(img1, se);
 img22 = imdilate(img2, se);
@@ -24,7 +24,7 @@ zmin = -9;
 zmax = 13;
 
 eps = 1e-6;
-width = 7;
+width = 2;
 
 max_l = 0;
 max_r = 0;
@@ -118,7 +118,7 @@ for i = xmin:xmax
             x2 = round(ind2(1) / ind2(3));
             y2 = round(ind2(2) / ind2(3));
 
-            if isValid(x0, y0, img0, width) && isValid(x1, y1, img1, width) && isValid(x2, y2, img2, width)
+            if isValid(x0, y0, img00, width) && isValid(x1, y1, img11, width) && isValid(x2, y2, img22, width)
                 res(i-xmin+1, j-ymin+1, k-zmin+1) = 255;
                 fprintf(fid, 'v %d %d %d\n', i, j, k);
             end
