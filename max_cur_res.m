@@ -3,8 +3,8 @@ close all;
 clc;
 
 load trans.mat;
-path = 'E:\指静脉与指背纹\Work\Code\NewestDatabase\max_cur_dilate\';
-path_res = 'E:\指静脉与指背纹\Work\Code\NewestDatabase\max_cur_res\';
+path = 'E:\指静脉与指背纹\Work\Code\NewestDatabase2\max_cur_dilate\';
+path_res = 'E:\指静脉与指背纹\Work\Code\NewestDatabase2\max_cur_res\';
 
 xmin = -12;
 xmax = 12;
@@ -15,7 +15,7 @@ zmax = 13;
 
 width = 2;
 
-for sampleNo = 1:200
+for sampleNo = 23:200
     sampleNo
     path1 = [path, num2str(sampleNo, '%.4d\\')];
     path1_res = [path_res, num2str(sampleNo, '%.4d\\')];
@@ -124,7 +124,8 @@ for sampleNo = 1:200
         fclose(fid);
         info(:, :, :, id) = res;
     end
-    save info.mat info
+    savepath = [path1_res, 'info.mat'];
+    save(savepath, 'info');
 end
 
 
